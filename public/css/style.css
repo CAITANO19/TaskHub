@@ -1,0 +1,280 @@
+:root {
+  --bg: #f9fafc;
+  --bg-elev: #ffffff;
+  --text: #1f1f1f;
+  --muted: #707070;
+  --border: #C1C9D9;
+  --primary: #8A7ED9;
+  --primary-dark: #6f63c4;
+  --secondary: #9B95BF;
+  --accent: #F26E22;
+  --accent-dark: #d85b15;
+  --terra: #A67051;
+  --shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  --radius: 12px;
+  --footer-h: 88px;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  letter-spacing: .2px;
+  padding-bottom: var(--footer-h);
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color .2s ease;
+}
+a:hover { color: var(--accent-dark); }
+
+.container { max-width: 1180px; }
+    .card, .list-group-item, .table, .alert, .form-control, .form-select {
+        background: var(--bg-elev);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+    }
+
+/* NAVBAR CLARA */
+.navbar{
+  background: #ffffff;                 /* fundo branco sólido, sem escurecer */
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 4px 10px rgba(0,0,0,.03);
+  backdrop-filter: none;               /* remove o efeito vidro que pode escurecer */
+  -webkit-backdrop-filter: none;
+}
+
+/* Cores dos textos/links na barra */
+.navbar .navbar-brand,
+.navbar .nav-link{
+  color: var(--text) !important;       /* texto escuro para boa leitura */
+}
+
+.navbar .nav-link{
+  font-weight: 600;
+  border-radius: 10px;
+  padding: .45rem .75rem;
+  transition: background .2s ease, color .2s ease;
+}
+
+.navbar .nav-link:hover{
+  background: rgba(242,110,34,.08);    /* laranja da sua paleta como destaque suave */
+  color: var(--accent) !important;
+}
+
+/* Logo e título permanecem visíveis no fundo claro */
+.logo { height: 36px; width: auto; border-radius: 8px; box-shadow: var(--shadow); }
+.logo-text { color: var(--primary-dark); font-weight: 800; }
+
+/* Toggler (menu hambúrguer) visível em fundo claro */
+.navbar .navbar-toggler{
+  border-color: var(--border);
+}
+.navbar .navbar-toggler-icon{
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(31,31,31, 0.85)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Mantém CLARO mesmo no dark mode do sistema */
+@media (prefers-color-scheme: dark){
+  .navbar{
+    background: #ffffff;
+    border-bottom-color: var(--border);
+  }
+  .navbar .navbar-brand, .navbar .nav-link{
+    color: #1f1f1f !important;
+  }
+}
+
+.logo {
+  height: 36px;
+  width: auto;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  transition: transform .15s ease, filter .15s ease;
+}
+.logo:hover { transform: scale(1.05); filter: brightness(1.1); }
+.logo-text {
+  font-weight: 800;
+  font-size: 1.3rem;
+  color: var(--primary-dark);
+}
+
+.site-hero {
+  padding: 20px 0 26px;
+  background: linear-gradient(180deg, rgba(138,126,217,0.08), rgba(white));
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+}
+.hero-logo {
+  height: 72px;
+  width: auto;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+}
+
+.card, .list-group-item, .table, .alert, .form-control, .form-select {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .45rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg-elev);
+  color: var(--text);
+  padding: .55rem .95rem;
+  font-weight: 600;
+  transition: all .15s ease;
+}
+.btn:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(0,0,0,.08); }
+
+.btn-primary {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+.btn-primary:hover { background: var(--primary-dark); }
+
+.btn-accent {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.btn-accent:hover { background: var(--accent-dark); }
+
+.btn-terra {
+  background: var(--terra);
+  color: #fff;
+  border-color: var(--terra);
+}
+.btn-terra:hover { filter: brightness(1.1); }
+
+.btn-light {
+  background: var(--bg-elev);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.table {
+  overflow: hidden;
+}
+.table thead th {
+  background: #f3f4f8;
+  border-bottom: 2px solid var(--border);
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+.table tbody td {
+  border-top: 1px solid var(--border);
+}
+.table-hover tbody tr:hover {
+  background: rgba(138,126,217,.08);
+}
+
+.badge {
+  border-radius: 999px;
+  padding: .35rem .6rem;
+  font-weight: 700;
+}
+.badge.bg-success { background: rgba(242,110,34,.12) !important; color: var(--accent); }
+.badge.bg-secondary { background: rgba(155,149,191,.15) !important; color: var(--secondary); }
+
+.form-label { font-weight: 700; color: var(--primary-dark); }
+.form-control, .form-select {
+  padding: .6rem .75rem;
+  transition: border-color .15s, box-shadow .15s;
+}
+.form-control:focus, .form-select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(138,126,217,.2);
+  outline: none;
+}
+.form-check-input {
+  width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
+.form-check-input:checked {
+  background-color: var(--accent);
+  border-color: var(--accent);
+}
+
+.alert {
+  padding: .9rem 1rem;
+  border-left: 4px solid var(--accent);
+  background: rgba(242,110,34,.1);
+  color: var(--terra);
+  font-weight: 500;
+}
+
+.pagination .page-link {
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  color: var(--text);
+  background: var(--bg-elev);
+  margin: 0 .15rem;
+}
+.pagination .page-item.active .page-link {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+.app-footer {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  height: var(--footer-h);
+  background: rgba(255,255,255,.85);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--border);
+  z-index: 1030;
+}
+.app-footer .footer-inner {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 0 1rem;
+  text-align: center;
+}
+.footer-logo {
+  height: 28px;
+  width: auto;
+  border-radius: 6px;
+}
+.app-footer h5 {
+  margin: 0;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+.app-footer .links a {
+  color: var(--secondary);
+  margin-right: 1rem;
+  font-weight: 600;
+}
+.app-footer .links a:hover { color: var(--accent); }
+.app-footer .copy {
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+/* ---------- Utilitários ---------- */
+.shadow-soft { box-shadow: var(--shadow); }
+.rounded { border-radius: var(--radius) !important; }
+.text-accent { color: var(--accent); }
+.text-primary { color: var(--primary); }
+
